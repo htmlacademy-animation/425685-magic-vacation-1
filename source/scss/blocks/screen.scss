@@ -48,6 +48,16 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
+  transform: translateY(100%);
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.5, 0.8, 1, 1);
+  transition-duration: 0.4s;
+
+  .body--loaded & {
+    transform: translateY(0);
+    opacity: 1;
+  }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
