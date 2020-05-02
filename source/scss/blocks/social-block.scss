@@ -67,6 +67,11 @@
     & + .social-block__list {
       opacity: 1;
       pointer-events: auto;
+
+      li {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 
@@ -143,11 +148,27 @@
   .social-block--active & {
     opacity: 1;
     pointer-events: auto;
+
+    li {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   li {
     flex: none;
     margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateY(50%);
+    transition-property: opacity, transform;
+    transition-timing-function: ease;
+    transition-duration: 0.1s;
+
+    @for $itemIndex from 1 through 3 {
+      &:nth-child(#{$itemIndex}) {
+        transition-delay: 0.3s + 0.1s * ($itemIndex - 1);
+      }
+    }
 
     @media (min-width: $stop-scaling) {
       margin-bottom: 5px;
