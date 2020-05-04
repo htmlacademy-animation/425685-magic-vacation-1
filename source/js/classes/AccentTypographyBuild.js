@@ -1,17 +1,15 @@
 export default class AccentTypographyBuild {
   constructor(
       elementSelector,
-      timer,
-      classForActivate,
-      property
+      offsetDelta,
+      classForActivate
   ) {
     this._TIME_SPACE = 100;
 
     this._elementSelector = elementSelector;
-    this._timer = timer;
     this._classForActivate = classForActivate;
-    this._property = property;
     this._element = document.querySelector(this._elementSelector);
+    this._offsetDelta = offsetDelta;
     this._timeOffset = 0;
     this._letterIndex = 0;
 
@@ -21,7 +19,7 @@ export default class AccentTypographyBuild {
   createElement(letter) {
     const span = document.createElement(`span`);
     span.textContent = letter;
-    span.style.transition = `${this._property} ${this._timer}ms ease ${this._timeOffset}ms`;
+    span.style.transitionDelay = `${this._timeOffset}ms`;
     this._timeOffset += this.calculateDelay(this._letterIndex);
     this._letterIndex += 1;
     return span;
@@ -31,9 +29,9 @@ export default class AccentTypographyBuild {
     switch (true) {
       case (currentIndex % 6 === 1):
       case (currentIndex % 6 === 4):
-        return -30;
+        return -1 * this._offsetDelta;
       default:
-        return 60;
+        return this._offsetDelta * 2;
     }
   }
 

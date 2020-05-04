@@ -7,6 +7,10 @@
     overflow: hidden;
 
     > span {
+      will-change: transform;
+      transition-property: transform;
+      transition-timing-function: ease;
+      transition-duration: 0.3s;
       transform: translate3d(0, 1.3em, 0);
       display: inline-block;
 

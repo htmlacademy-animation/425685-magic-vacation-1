@@ -59,6 +59,10 @@
       &:not(:first-child) {
         margin-top: -0.55em;
       }
+
+      > span {
+        transition-duration: 0.7s;
+      }
     }
   }
 }
@@ -190,6 +194,10 @@
     &__word {
       line-height: 1;
       margin: -0.1em 0.1em 0;
+
+      > span {
+        transition-duration: 0.7s;
+      }
     }
   }
 }
