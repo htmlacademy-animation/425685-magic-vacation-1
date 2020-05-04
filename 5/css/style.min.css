@@ -1513,6 +1513,10 @@ img {
     white-space: nowrap;
     overflow: hidden; }
     .accent-typography__word > span {
+      will-change: transform;
+      transition-property: transform;
+      transition-timing-function: ease;
+      transition-duration: 0.3s;
       transform: translate3d(0, 1.3em, 0);
       display: inline-block; }
       .accent-typography.active .accent-typography__word > span {
@@ -1566,6 +1570,8 @@ img {
     margin-top: -0.15em; }
     .intro__title .accent-typography__word:not(:first-child) {
       margin-top: -0.55em; }
+    .intro__title .accent-typography__word > span {
+      transition-duration: 0.7s; }
 
 .intro__content {
   display: flex;
@@ -1667,6 +1673,8 @@ img {
   .intro__date .accent-typography__word {
     line-height: 1;
     margin: -0.1em 0.1em 0; }
+    .intro__date .accent-typography__word > span {
+      transition-duration: 0.7s; }
 
 .page-header {
   position: fixed;
