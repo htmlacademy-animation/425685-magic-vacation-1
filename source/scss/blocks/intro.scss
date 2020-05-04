@@ -50,6 +50,17 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     font-size: 5rem;
   }
+
+  .accent-typography {
+    &__word {
+      line-height: 1.25;
+      margin-top: -0.15em;
+
+      &:not(:first-child) {
+        margin-top: -0.55em;
+      }
+    }
+  }
 }
 
 .intro__content {
@@ -93,9 +104,9 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.27;
-  transform: translateY(50px);
+  transform: translateY(1em);
   opacity: 0;
-  transition: opacity 0.3s ease 1s, transform 0.3s ease 1s;
+  transition: opacity 0.3s ease 1.2s, transform 0.3s ease 1.2s;
 
   .active & {
     opacity: 1;
@@ -149,6 +160,11 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
+  opacity: 0;
+
+  &.animated {
+    animation: fadeInSlideFromBottom 0.5s ease both;
+  }
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 16px;
@@ -163,10 +179,17 @@
   font-weight: 400;
   font-size: 4.8rem;
   line-height: 0.906;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.027em;
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 0 -5px;
     font-size: 48px;
+  }
+
+  .accent-typography {
+    &__word {
+      line-height: 1;
+      margin: -0.1em 0.1em 0;
+    }
   }
 }
