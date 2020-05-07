@@ -5,6 +5,7 @@
 
   .swiper-wrapper {
     min-height: 100vh;
+    box-sizing: border-box;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(var(--vh, 1vh) * 100);
@@ -95,26 +96,6 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
-  opacity: 0;
-  transform: translateX(50px);
-  transition-property: opacity, transform;
-  transition-timing-function: ease;
-
-  .swiper-slide-active & {
-    transition-duration: 0.5s;
-    transition-delay: 1s;
-  }
-
-  .swiper-slide-next & {
-    transition-duration: 0.8s;
-    transition-delay: 1.5s;
-  }
-
-  .active .swiper-slide-active &,
-  .active .swiper-slide-next & {
-    opacity: 1;
-    transform: translateX(0);
-  }
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
