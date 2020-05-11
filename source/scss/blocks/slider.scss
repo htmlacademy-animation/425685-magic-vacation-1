@@ -96,6 +96,26 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  opacity: 0;
+  transform: translateX(50px);
+  transition-property: opacity, transform;
+  transition-timing-function: ease;
+
+  .swiper-slide-active & {
+    transition-duration: 0.5s;
+    transition-delay: 1s;
+  }
+
+  .swiper-slide-next & {
+    transition-duration: 0.8s;
+    transition-delay: 1.5s;
+  }
+
+  .active .swiper-slide-active &,
+  .active .swiper-slide-next & {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
@@ -155,6 +175,23 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+  transition: color 0.25s ease;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.55, 1.5);
+
+  &--next {
+    .screen--story.active & {
+      animation-name: sliderControlNextRoll;
+    }
+  }
+
+  &--prev {
+    .screen--story.active & {
+      animation-name: sliderControlPrevRoll;
+    }
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -170,6 +207,7 @@
     border: 2px solid $c-light;
     border-radius: 50%;
     z-index: -1;
+    transition: all 0.25s ease;
   }
 
   svg {
