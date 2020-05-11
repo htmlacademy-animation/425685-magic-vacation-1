@@ -4,6 +4,7 @@
 @import "general/mixins.scss";
 @import "general/fonts.scss";
 @import "general/scaffolding.scss";
+@import "general/keyframes.scss";
 
 @import "blocks/animation-screen.scss";
 @import "blocks/btn.scss";
@@ -11,6 +12,7 @@
 @import "blocks/disclaimer.scss";
 @import "blocks/form.scss";
 @import "blocks/game.scss";
+@import "blocks/accent-typography.scss";
 @import "blocks/intro.scss";
 @import "blocks/page-header.scss";
 @import "blocks/prizes.scss";
@@ -19,3 +21,4 @@
 @import "blocks/screen.scss";
 @import "blocks/slider.scss";
 @import "blocks/social-block.scss";
+@import "blocks/overlay-screen.scss";

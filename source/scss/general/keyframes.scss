@@ -61,3 +61,28 @@
     transform: translateY(0);
   }
 }
+
+@keyframes sliderControlNextRoll {
+  from {
+    opacity: 0;
+    transform: translateX(200%) rotate(540deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes sliderControlPrevRoll {
+  from {
+    opacity: 0;
+    transform: translateX(-200%) rotate(-540deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
